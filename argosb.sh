@@ -356,8 +356,10 @@ echo
 if [[ "$hostname" == *firebase* || "$hostname" == *idx* ]]; then
 [ -f ~/.bashrc ] || touch ~/.bashrc
 sed -i '/yonggekkk/d' ~/.bashrc
-echo "export nix=y uuid=${uuid} vmpt=${port_vm_ws} agn=${ARGO_DOMAIN} agk=${ARGO_AUTH} && bash <(curl -Ls https://raw.githubusercontent.com/suzukua/ArgoSB/refs/heads/main/argosb.sh)" >> ~/.bashrc
-source ~/.bashrc
+if ! grep -q "^export nix=" ~/.bashrc; then
+  echo "export nix=y uuid=${uuid} vmpt=${port_vm_ws} agn=${ARGO_DOMAIN} agk=${ARGO_AUTH} && bash <(curl -Ls https://raw.githubusercontent.com/suzukua/ArgoSB/refs/heads/main/argosb.sh)" >> ~/.bashrc
+  source ~/.bashrc
+fi
 fi
 sleep 2
 
