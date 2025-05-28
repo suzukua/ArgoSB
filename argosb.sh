@@ -166,8 +166,7 @@ cat > /etc/s-box-ag/sb.json <<EOF
         "listen_port": ${port_vm_ws},
         "users": [
             {
-                "uuid": "${UUID}",
-                "alterId": 0
+                "uuid": "${UUID}"
             }
         ],
         "transport": {
