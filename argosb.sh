@@ -172,7 +172,7 @@ cat > /etc/s-box-ag/sb.json <<EOF
         "transport": {
             "type": "ws",
             "path": "${UUID}-vm",
-            "max_early_data":2048,
+            "max_early_data":4096,
             "early_data_header_name": "Sec-WebSocket-Protocol"
         },
         "tls":{
@@ -384,7 +384,7 @@ cat > nixag/sb.json <<EOF
         "transport": {
             "type": "ws",
             "path": "${UUID}-vm",
-            "max_early_data":2048,
+            "max_early_data":4096,
             "early_data_header_name": "Sec-WebSocket-Protocol"
         },
         "tls":{
